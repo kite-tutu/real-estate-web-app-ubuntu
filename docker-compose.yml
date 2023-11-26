@@ -10,15 +10,14 @@ services:
             - .:/app
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
-        expose:
-            - "8000"
+        ports:
+            - "8005:8005"
         env_file:
             - .env
         depends_on:
             - postgres-db
         networks:
             - estate-react
-            
     postgres-db:
         image: postgres:12.0-alpine
         ports:
@@ -31,11 +30,9 @@ services:
             - POSTGRES_DB=${POSTGRES_DB}
         networks:
             - estate-react
-
 networks:
     estate-react:
         driver: bridge
-
 volumes:
     postgres_data:
     static_volume:
