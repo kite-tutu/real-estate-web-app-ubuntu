@@ -10,8 +10,8 @@ services:
             - .:/app
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
-        #expose:
-        #    - "8005"
+        expose:
+            - "8005"
         env_file:
             - .env
         depends_on:

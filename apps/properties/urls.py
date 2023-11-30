@@ -13,7 +13,7 @@ urlpatterns = [
         views.PropertyDetailView.as_view(),
         name="property-details",
     ),
-    path("update/slug:slug>/", views.update_property_api_view, name="update-property"),
-    path("delete/slug:slug>/", views.delete_property_api_view, name="delete-property"),
+    path("update/<slug:slug>/", views.update_property_api_view, name="update-property"),
+    path("delete/<slug:slug>/", views.delete_property_api_view, name="delete-property"),
     path("search/", views.PropertySearchAPIView.as_view(), name="property-search"),
 ]
