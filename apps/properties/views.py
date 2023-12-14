@@ -139,7 +139,7 @@ def delete_property_api_view(request, slug):
     except Property.DoesNotExist:
         raise PropertyNotFound
 
-    ususer = request.user
+    user = request.user
     if property.user != user:
         return Response(
             {"error": "You can't delete a property that doesn't belong to you"},
