@@ -13,15 +13,15 @@ const App = ()=> {
         <Header/>
         <main className='py-3'>
           <Routes>
-            <Route path='/' element={<HomePage/>}></Route>
+            <Route path='/' element={<HomePage/>}/>
+      
+            <Route path='/properties' element={<PropertiesPage/>}/>
           </Routes>
-          <Routes>
-            <Route path='/properties' element={<PropertiesPage/>}></Route>
-          </Routes>
+          <ToastContainer/>
         </main>
         <Footer/>
       </Router>
-      <ToastContainer/>
+     
     </>
   );
 }
